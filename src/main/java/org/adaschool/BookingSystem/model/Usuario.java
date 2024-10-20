@@ -2,6 +2,7 @@ package org.adaschool.BookingSystem.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Document(collection = "usuarios")
 public class Usuario {
@@ -52,7 +53,7 @@ public class Usuario {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = new BCryptPasswordEncoder().encode(password);
     }
 
     public String getTelefono() {

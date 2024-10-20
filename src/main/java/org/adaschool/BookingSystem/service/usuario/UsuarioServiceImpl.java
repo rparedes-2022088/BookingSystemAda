@@ -25,6 +25,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario save(Usuario usuario) {
+        System.out.println("Se esta guardando");
         return usuarioRepository.save(usuario);
     }
 
